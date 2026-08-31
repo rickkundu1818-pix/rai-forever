@@ -86,7 +86,8 @@ body {
 }
 
 body.cover-page {
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: visible;
 }
 
 body:not(.cover-page) {

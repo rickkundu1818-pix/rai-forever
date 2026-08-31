@@ -105,7 +105,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: clip;
+  overflow: visible;
   background: var(--charcoal);
 }
 
@@ -164,6 +164,7 @@
   padding: clamp(5.5rem, 12vh, 7.5rem) 1.5rem 4.8rem;
   text-align: center;
   color: var(--cream);
+  overflow: visible;
 }
 
 .hero-eyebrow {
@@ -208,6 +209,7 @@
   flex-direction: column;
   align-items: center;
   margin-top: clamp(1.8rem, 4vh, 2.6rem);
+  overflow: visible;
 }
 
 .hero-tagline {
@@ -233,61 +235,76 @@
 
 .cover-page .hero-cta {
   position: relative;
-  width: clamp(146px, 40vw, 180px);
-  aspect-ratio: 1 / 0.92;
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  padding: 0 2.6rem 0.2rem;
-  border: 1px solid rgba(201,161,90,0.7);
-  border-radius: 999px;
-  color: var(--cream);
-  background: linear-gradient(180deg, rgba(201,161,90,0.12), rgba(62,15,29,0.22));
-  clip-path: polygon(50% 100%, 18% 82%, 0% 52%, 10% 18%, 36% 0%, 64% 0%, 90% 18%, 100% 52%, 82% 82%);
-  isolation: isolate;
-  box-shadow: inset 0 0 0 1px rgba(244,221,175,0.2), 0 20px 35px rgba(17,7,10,0.22);
-  transition: transform var(--dur-fast) var(--ease-cinematic), filter var(--dur-fast) ease, box-shadow var(--dur-fast) ease;
+  width: 190px;
+  height: 175px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  transform: none;
+  overflow: visible;
+  transition: transform var(--dur-fast) var(--ease-cinematic), filter var(--dur-fast) ease;
 }
-.cover-page .hero-cta::before {
-  content: '';
+
+.cover-page .hero-cta .heart-svg {
   position: absolute;
-  inset: 7px;
-  z-index: -1;
-  background: linear-gradient(180deg, rgba(62,15,29,0.75), rgba(31,10,17,0.92));
-  clip-path: inherit;
-  border-radius: inherit;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  filter: drop-shadow(0 12px 24px rgba(12, 5, 7, 0.35));
 }
-.cover-page .hero-cta span {
+
+.cover-page .hero-cta .heart-svg path {
+  fill: rgba(77, 18, 32, 0.98);
+  stroke: rgba(201, 161, 90, 0.9);
+  stroke-width: 1.8;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.cover-page .hero-cta .heart-button-text {
   position: absolute;
   top: 50%;
   left: 50%;
-  z-index: 2;
-  display: block;
-  max-width: none;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 62%;
+  max-width: 128px;
   text-align: center;
   color: #F5D98A;
-  font-size: 14px;
+  font-size: 12.5px;
   font-weight: 700;
   line-height: 1.35;
-  letter-spacing: 0.8px;
-  white-space: nowrap;
-  opacity: 1;
-  transform: translate(-50%, -50%);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+  z-index: 2;
 }
+
 .cover-page .hero-cta:hover {
-  color: var(--cream);
-  background: linear-gradient(180deg, rgba(201,161,90,0.18), rgba(62,15,29,0.25));
-  border-color: rgba(245,217,138,0.9);
-  transform: scale(1.04);
-  filter: drop-shadow(0 8px 18px rgba(228, 203, 154, 0.18));
-  box-shadow: inset 0 0 0 1px rgba(244,221,175,0.35), 0 18px 28px rgba(17,7,10,0.28);
+  transform: translateY(-2px);
+  filter: drop-shadow(0 8px 18px rgba(228, 203, 154, 0.2));
 }
 
 @media (max-width: 600px) {
   .cover-page .hero-cta {
-    width: clamp(130px, 36vw, 145px);
+    width: 155px;
+    height: 145px;
   }
-  .cover-page .hero-cta span {
-    font-size: 12.5px;
+
+  .cover-page .hero-cta .heart-button-text {
+    width: 64%;
+    max-width: 110px;
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
   }
 }
 
