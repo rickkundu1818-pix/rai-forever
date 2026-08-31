@@ -1,0 +1,69 @@
+/* ============================================================
+   THE MIRROR OF US - isolated page styles
+   ============================================================ */
+.mirror-page {
+  --mirror-night: #160b10;
+  --mirror-wine: #632235;
+  --mirror-rose: #b66b79;
+  --mirror-gold: #d6b06a;
+  --mirror-paper: #f4e7d4;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 50% 18%, rgba(117, 40, 62, 0.28), transparent 42%),
+    linear-gradient(145deg, #261019 0%, var(--mirror-night) 50%, #32121e 100%);
+  color: var(--mirror-paper);
+}
+.mirror-main { width: min(1200px, calc(100% - 2.4rem)); max-width: 1200px; margin-inline: auto; padding: 2rem 0 7rem; }
+.mirror-back { display: inline-block; color: var(--mirror-gold); font-size: .76rem; letter-spacing: .16em; text-transform: uppercase; }
+.mirror-back:hover { color: var(--mirror-paper); }
+.mirror-hero { width: 100%; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+.mirror-intro { width: 100%; max-width: 900px; margin-inline: auto; padding: clamp(4.5rem, 11vh, 7rem) 1rem 3rem; text-align: center; }
+.mirror-kicker { color: var(--mirror-gold); font-size: .72rem; letter-spacing: .3em; text-transform: uppercase; }
+.mirror-intro h1 { margin-top: .8rem; font-size: clamp(3rem, 8vw, 6.2rem); font-weight: 400; text-transform: uppercase; }
+.mirror-subtitle { margin-top: 1rem; color: #e5c6bf; font-family: var(--font-display); font-size: clamp(1.25rem, 2.4vw, 1.75rem); font-style: italic; }
+.mirror-prompt { display: inline-block; margin-top: .7rem; padding: .65rem 1.15rem; border: 1px solid var(--mirror-gold); border-radius: 999px; background: rgba(99, 34, 53, .18); color: var(--mirror-gold); font-size: .78rem; letter-spacing: .14em; transition: background .2s ease, border-color .2s ease, box-shadow .2s ease, color .2s ease; }
+.mirror-prompt:hover, .mirror-prompt:focus-visible { background: rgba(99, 34, 53, .42); border-color: #f1d795; box-shadow: 0 0 16px rgba(214, 176, 106, .25); color: #f1d795; }
+.mirror-experience { width: min(720px, 100%); margin: 0 auto; text-align: center; }
+.mirror-frame { position: relative; width: min(620px, 90vw); margin: 0 auto; padding: 19px; border: 3px solid var(--mirror-gold); border-radius: 48% 48% 9% 9% / 25% 25% 5% 5%; background: linear-gradient(135deg, #8e652e, #f0d58d 18%, #946b32 45%, #e8c978 75%, #795225); box-shadow: 0 0 0 5px rgba(90, 31, 47, .85), 0 0 45px rgba(214, 176, 106, .25), 0 28px 45px rgba(0,0,0,.45); }
+.mirror-surface { --mirror-split: 50%; position: relative; aspect-ratio: 1 / 1.16; overflow: hidden; border: 5px solid #3b1a22; border-radius: 47% 47% 5% 5% / 24% 24% 4% 4%; background: #28121b; isolation: isolate; }
+.mirror-surface::after { content: ''; position: absolute; inset: 0; border: 1px solid rgba(249, 221, 160, .42); border-radius: inherit; box-shadow: inset 0 0 35px rgba(255, 211, 129, .22); pointer-events: none; z-index: 4; }
+.mirror-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; transition: clip-path .22s ease, opacity .22s ease; filter: saturate(.78) contrast(1.04) sepia(.12); }
+.mirror-photo--you { clip-path: inset(0 calc(100% - var(--mirror-split)) 0 0); opacity: .92; }
+.mirror-photo--her { clip-path: inset(0 0 0 var(--mirror-split)); opacity: .88; }
+.mirror-sheen { position: absolute; inset: 0; z-index: 3; background: linear-gradient(112deg, rgba(255,255,255,.16), transparent 24%, transparent 68%, rgba(250,210,173,.08)); pointer-events: none; }
+.mirror-center-line { position: absolute; z-index: 5; left: 50%; top: 5%; bottom: 5%; width: 1px; background: rgba(250, 225, 164, .3); box-shadow: 0 0 10px rgba(255, 222, 142, .7); pointer-events: none; }
+.mirror-crown { position: absolute; z-index: 6; left: 50%; top: -25px; transform: translateX(-50%); color: var(--mirror-gold); font-size: 1.2rem; text-shadow: 0 2px 4px #3b1a22; }
+.mirror-foot { width: 72%; height: 14px; margin: 12px auto 0; border-radius: 50%; background: linear-gradient(#d9b46b, #774f28); box-shadow: 0 10px 22px rgba(0,0,0,.38); }
+.mirror-labels { display: flex; justify-content: space-between; width: min(620px, 90vw); margin: 1.3rem auto .55rem; padding: 0 1rem; color: var(--mirror-gold); font-size: .74rem; letter-spacing: .28em; }
+.mirror-slider-label { display: block; color: #dbc7c1; font-size: .76rem; letter-spacing: .16em; }
+.mirror-slider-label span { color: var(--mirror-gold); margin: 0 .5rem; }
+.mirror-slider { display: block; width: min(520px, 80vw); height: 4px; margin: 1rem auto 0; accent-color: var(--mirror-gold); cursor: ew-resize; }
+.mirror-reveal { min-height: 4.2rem; margin: 2rem auto 0; opacity: 0; transform: translateY(6px); transition: opacity .35s ease, transform .35s ease; }
+.mirror-reveal.is-visible { opacity: 1; transform: translateY(0); }
+.mirror-reveal p { color: #d9c4bd; font-family: var(--font-display); font-size: 1.22rem; font-style: italic; }
+.mirror-reveal strong { display: block; margin-top: .25rem; color: var(--mirror-gold); font-family: var(--font-display); font-size: 1.8rem; font-weight: 500; letter-spacing: .08em; }
+.mirror-sides { margin: clamp(6rem, 12vw, 9rem) auto 0; }
+.mirror-section-heading { text-align: center; }
+.mirror-section-heading h2 { margin-top: .7rem; font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; }
+.mirror-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
+.mirror-card { border: 1px solid rgba(214,176,106,.38); background: rgba(56, 20, 32, .62); }
+.mirror-card-button { display: grid; grid-template-columns: auto 1fr auto; grid-template-areas: 'number title mark' 'number label mark'; width: 100%; padding: 1.3rem; text-align: left; }
+.mirror-card-button:hover { background: rgba(148, 67, 86, .18); }
+.mirror-card-number { grid-area: number; align-self: center; padding-right: 1rem; color: var(--mirror-gold); font-family: var(--font-display); font-size: 1.5rem; }
+.mirror-card-title { grid-area: title; color: var(--mirror-paper); font-family: var(--font-display); font-size: 1.55rem; }
+.mirror-card-label { grid-area: label; color: #c5aaa5; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; }
+.mirror-card-mark { grid-area: mark; align-self: center; color: var(--mirror-gold); font-size: 1.3rem; }
+.mirror-card-content { padding: 0 1.3rem 1.4rem 3.95rem; color: #e2cbc2; font-family: var(--font-display); font-size: 1.15rem; line-height: 1.55; }
+.mirror-memory-strip { display: grid; gap: .9rem; }
+.mirror-memory-strip figure { display: grid; grid-template-columns: 64px 1fr; gap: .7rem; align-items: center; margin: 0; }
+.mirror-memory-strip img { width: 64px; height: 48px; object-fit: cover; border: 1px solid var(--mirror-gold); }
+.mirror-memory-strip figcaption { font-size: 1rem; line-height: 1.2; }
+.mirror-behind { margin: clamp(6rem, 12vw, 9rem) auto 0; text-align: center; }
+.mirror-behind h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); font-weight: 400; }
+.mirror-behind-button { margin-top: 1.5rem; padding: .9rem 1.35rem; border: 1px solid var(--mirror-gold); color: var(--mirror-gold); font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; transition: background .25s ease, color .25s ease; }
+.mirror-behind-button:hover { background: var(--mirror-gold); color: var(--mirror-night); }
+.mirror-letter { width: min(600px, 100%); margin: 2rem auto 0; padding: clamp(2rem, 6vw, 4rem); color: #3d2527; text-align: left; background: var(--mirror-paper); box-shadow: 12px 14px 0 rgba(108, 43, 55, .5), 0 25px 40px rgba(0,0,0,.28); transform-origin: top center; animation: mirror-letter-open .42s ease both; }
+.mirror-letter p { white-space: pre-line; font-family: var(--font-script); font-size: clamp(1.8rem, 4vw, 2.7rem); line-height: 1.3; }
+@keyframes mirror-letter-open { from { opacity: 0; transform: translateY(-22px) rotateX(-8deg); } to { opacity: 1; transform: translateY(0) rotateX(0); } }
+@media (max-width: 700px) { .mirror-main { width: min(1200px, calc(100% - 1.4rem)); padding-top: 1.4rem; } .mirror-intro { padding-top: 4rem; } .mirror-frame { width: 100%; padding: 12px; } .mirror-cards { grid-template-columns: 1fr; } .mirror-card-content { padding-left: 1.3rem; } .mirror-slider { width: 88vw; } }
+@media (prefers-reduced-motion: reduce) { .mirror-photo, .mirror-reveal, .mirror-behind-button { transition: none; } .mirror-letter { animation: none; } }

@@ -1,0 +1,237 @@
+/* ============================================================
+   RAI FOREVER — DESIGN TOKENS
+   Palette: deep wine, soft rose, blush, warm cream, charcoal, gold
+   Type: Cormorant Garamond (display) / Jost (body) / Parisienne (script)
+   ============================================================ */
+
+:root {
+  /* Color */
+  --wine: #5C1A2B;
+  --wine-deep: #3E0F1D;
+  --rose: #C77D8B;
+  --blush: #F3D9DD;
+  --cream: #FAF3EA;
+  --cream-dim: #F0E6D8;
+  --charcoal: #1B1417;
+  --charcoal-soft: #241B1F;
+  --gold: #C9A15A;
+  --gold-soft: #E4CB9A;
+  --ink: #2A1E22;
+
+  /* Semantic */
+  --bg-light: var(--cream);
+  --bg-dark: var(--charcoal);
+  --text-on-light: var(--ink);
+  --text-on-dark: var(--cream);
+  --muted-on-light: #7A6660;
+  --muted-on-dark: #C9B8B2;
+  --accent: var(--gold);
+  --line-on-light: rgba(42, 30, 34, 0.12);
+  --line-on-dark: rgba(250, 243, 234, 0.14);
+
+  /* Type */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Jost', 'Helvetica Neue', Arial, sans-serif;
+  --font-script: 'Parisienne', cursive;
+
+  /* Scale */
+  --fs-hero: clamp(3.2rem, 9vw, 7.5rem);
+  --fs-h1: clamp(2.4rem, 6vw, 4.2rem);
+  --fs-h2: clamp(2rem, 4.5vw, 3rem);
+  --fs-body: 1.05rem;
+  --fs-small: 0.85rem;
+
+  /* Motion */
+  --ease-cinematic: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-slow: 1.1s;
+  --dur-med: 0.6s;
+  --dur-fast: 0.3s;
+
+  /* Layout */
+  --container: 1200px;
+  --section-pad: clamp(4rem, 10vw, 8rem);
+  --radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-slow: 0.01s;
+    --dur-med: 0.01s;
+    --dur-fast: 0.01s;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+/* Keep native hidden UI truly out of the layout even when a component sets display. */
+[hidden] { display: none !important; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  margin: 0;
+  background: var(--bg-light);
+  color: var(--text-on-light);
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+body.cover-page {
+  overflow: hidden;
+}
+
+body:not(.cover-page) {
+  --wine: #3B1623;
+  --wine-deep: #2A0F18;
+  --rose: #B97882;
+  --blush: #EADBC8;
+  --cream: #F5EBDD;
+  --cream-dim: #EADBC8;
+  --charcoal: #2A0F18;
+  --charcoal-soft: #3B1623;
+  --gold: #C9A86A;
+  --gold-soft: #C9A86A;
+  --ink: #F5EBDD;
+  --bg-light: #2A0F18;
+  --bg-dark: #2A0F18;
+  --text-on-light: #F5EBDD;
+  --text-on-dark: #F5EBDD;
+  --muted-on-light: #D8C4B5;
+  --muted-on-dark: #D8C4B5;
+  --accent: #C9A86A;
+  --line-on-light: rgba(201, 168, 106, 0.3);
+  --line-on-dark: rgba(201, 168, 106, 0.3);
+  background: #2A0F18;
+  color: #F5EBDD;
+}
+
+body.chapter-page {
+  --bg-light: #E8C7C8;
+  --text-on-light: #3F3035;
+  --ink: #3F3035;
+  --muted-on-light: #3F3035;
+  --accent: #C9A86A;
+  --gold: #C9A86A;
+  --gold-soft: #C9A86A;
+  --line-on-light: rgba(59, 22, 35, 0.18);
+  background: #E8C7C8;
+  color: #3F3035;
+}
+
+img { max-width: 100%; display: block; }
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.08;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+p { margin: 0; }
+
+a { color: inherit; text-decoration: none; }
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: inherit;
+}
+
+input, textarea {
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--charcoal);
+  color: var(--cream);
+  padding: 1rem 1.5rem;
+  z-index: 999;
+}
+.skip-link:focus {
+  left: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 1rem;
+}
+
+.section-title {
+  font-size: var(--fs-h2);
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.95rem 2.2rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  border-radius: var(--radius);
+  transition: transform var(--dur-fast) var(--ease-cinematic),
+              background var(--dur-fast) ease,
+              color var(--dur-fast) ease,
+              border-color var(--dur-fast) ease,
+              box-shadow var(--dur-fast) ease;
+}
+.btn:hover { transform: translateY(-2px); }
+
+.btn-outline {
+  border: 1px solid var(--gold-soft);
+  color: var(--cream);
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(6px);
+}
+.btn-outline:hover {
+  background: var(--gold);
+  color: var(--wine-deep);
+  border-color: var(--gold);
+  box-shadow: 0 8px 30px rgba(201,161,90,0.35);
+}
+
+.btn-solid {
+  background: var(--wine);
+  color: var(--cream);
+  border: 1px solid var(--wine);
+}
+.btn-solid:hover {
+  background: var(--wine-deep);
+  box-shadow: 0 10px 30px rgba(92,26,43,0.35);
+}

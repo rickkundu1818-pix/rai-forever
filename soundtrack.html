@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Soundtrack of Us — RAI FOREVER</title>
+<meta name="description" content="A private album of memories for Rai.">
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&family=Parisienne&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/animations.css">
+</head>
+<body class="soundtrack-page">
+<div class="grain" aria-hidden="true"></div>
+<main class="soundtrack-page-main">
+  <a class="soundtrack-back" href="/story#soundtrack">← Back to Our Story</a>
+  <header class="soundtrack-header">
+    <div class="soundtrack-album-art">
+      <div class="soundtrack-record" aria-hidden="true"><span>RAI<br>♥<br>FOREVER</span></div>
+      <img src="images/first-meeting.jpg" alt="A memory from our first meeting" fetchpriority="high">
+    </div>
+    <div class="soundtrack-heading">
+      <p class="eyebrow">A Private Album</p>
+      <h1>The Soundtrack of Us 🎧</h1>
+      <p>Every story has a soundtrack. This one is ours.</p>
+      <button class="soundtrack-play" id="soundtrack-play" type="button"><span aria-hidden="true">▶</span> Play this memory</button>
+    </div>
+  </header>
+  <section class="soundtrack-content" aria-label="Soundtrack tracks">
+    <div class="soundtrack-list" id="soundtrack-list"></div>
+    <article class="soundtrack-view" id="soundtrack-view" aria-live="polite">
+      <div class="soundtrack-view-art"><img id="soundtrack-track-image" src="" alt="" loading="lazy" decoding="async"></div>
+      <div class="soundtrack-view-copy">
+        <p class="soundtrack-track-number" id="soundtrack-track-number"></p>
+        <h2 id="soundtrack-track-title"></h2>
+        <p class="soundtrack-view-subtitle" id="soundtrack-track-subtitle"></p>
+        <p class="soundtrack-view-date" id="soundtrack-track-date"></p>
+        <p class="soundtrack-view-memory" id="soundtrack-track-memory"></p>
+        <button class="soundtrack-lyrics-button" id="soundtrack-lyrics-button" type="button">♡ Read the Lyrics</button>
+        <p class="soundtrack-lyrics" id="soundtrack-lyrics" hidden></p>
+      </div>
+    </article>
+  </section>
+</main>
+<audio id="soundtrack-audio" preload="metadata"></audio>
+<aside class="soundtrack-player" id="soundtrack-player" aria-label="Soundtrack player">
+  <img id="soundtrack-player-image" src="" alt="" loading="lazy" decoding="async">
+  <div class="soundtrack-player-info">
+    <strong id="soundtrack-player-title">Select a track</strong>
+    <small id="soundtrack-player-subtitle"></small>
+    <p class="soundtrack-player-time"><span id="soundtrack-current-time">0:00</span><input id="soundtrack-progress" type="range" min="0" max="100" value="0" step="0.1" aria-label="Track progress"><span id="soundtrack-duration">0:00</span></p>
+    <p class="soundtrack-audio-status" id="soundtrack-audio-status" aria-live="polite"></p>
+  </div>
+  <div class="soundtrack-player-controls">
+    <button id="soundtrack-previous" type="button" aria-label="Previous track">|&lt;</button>
+    <button id="soundtrack-audio-toggle" type="button" aria-label="Play track">▶</button>
+    <button id="soundtrack-next" type="button" aria-label="Next track">&gt;|</button>
+    <label class="soundtrack-volume" for="soundtrack-volume">Vol <input id="soundtrack-volume" type="range" min="0" max="1" value="0.7" step="0.05"></label>
+  </div>
+</aside>
+<script src="js/soundtrack-tracks.js"></script>
+<script src="js/soundtrack-nav.js"></script>
+<script src="js/soundtrack.js"></script>
+</body>
+</html>

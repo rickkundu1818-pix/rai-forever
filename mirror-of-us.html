@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Mirror of Us — RAI FOREVER</title>
+<meta name="description" content="A hidden chapter in the story of Rai Forever.">
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&family=Parisienne&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/mirror.css">
+</head>
+<body class="mirror-page">
+<div class="grain" aria-hidden="true"></div>
+<main class="mirror-main">
+  <a class="mirror-back" href="/story#mirror-of-us">← Back to Our Story</a>
+
+  <section class="mirror-hero" aria-labelledby="mirror-page-title">
+    <header class="mirror-intro">
+      <p class="mirror-kicker">A Hidden Chapter</p>
+      <h1 id="mirror-page-title">The Mirror of Us</h1>
+      <p class="mirror-subtitle">Somewhere in this story, there are two people.</p>
+      <button class="mirror-prompt" type="button" onclick="window.location.hash = 'mirror-content'">Look closer</button>
+    </header>
+  </section>
+
+  <section class="mirror-experience" id="mirror-content" aria-labelledby="mirror-heading">
+    <h2 id="mirror-heading" class="sr-only">Two sides of our story</h2>
+    <div class="mirror-frame">
+      <div class="mirror-crown" aria-hidden="true">◆</div>
+      <div class="mirror-surface" id="mirror-surface">
+        <img class="mirror-photo mirror-photo--you" id="mirror-you-image" src="" alt="You in the mirror">
+        <img class="mirror-photo mirror-photo--her" id="mirror-her-image" src="" alt="Rai in the mirror">
+        <div class="mirror-sheen" aria-hidden="true"></div>
+        <div class="mirror-center-line" aria-hidden="true"></div>
+      </div>
+      <div class="mirror-foot" aria-hidden="true"></div>
+    </div>
+
+    <div class="mirror-labels" aria-hidden="true"><span>YOU</span><span>HER</span></div>
+    <label class="mirror-slider-label" for="mirror-slider">YOU <span>←────────────→</span> HER</label>
+    <input class="mirror-slider" id="mirror-slider" type="range" min="0" max="100" value="50" aria-label="Blend between you and her">
+
+    <div class="mirror-reveal" id="mirror-reveal" aria-live="polite" aria-hidden="true">
+      <p>And somewhere between you and me...</p>
+      <strong>WE BECAME US. <span aria-hidden="true">❤️</span></strong>
+    </div>
+  </section>
+
+  <section class="mirror-sides" aria-labelledby="sides-heading">
+    <div class="mirror-section-heading">
+      <p class="mirror-kicker">Three ways of seeing it</p>
+      <h2 id="sides-heading">The same story, from here.</h2>
+    </div>
+    <div class="mirror-cards" id="mirror-cards"></div>
+  </section>
+
+  <section class="mirror-behind" aria-labelledby="behind-heading">
+    <h2 id="behind-heading">There is something behind it.</h2>
+    <button class="mirror-behind-button" id="mirror-behind-button" type="button" aria-expanded="false" aria-controls="mirror-letter">Look Behind the Mirror</button>
+    <article class="mirror-letter" id="mirror-letter" hidden>
+      <p id="mirror-letter-text"></p>
+    </article>
+  </section>
+</main>
+<script src="js/config.js"></script>
+<script src="js/mirror-nav.js"></script>
+<script src="js/mirror.js"></script>
+</body>
+</html>

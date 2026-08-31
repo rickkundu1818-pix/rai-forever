@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAI FOREVER — All is only for you.</title>
+<meta name="description" content="A private digital love story, written for Rai.">
+<meta property="og:title" content="RAI FOREVER — All is only for you.">
+<meta property="og:description" content="A private digital love story, written for Rai.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/hero.jpg">
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&family=Parisienne&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/animations.css">
+</head>
+<body class="cover-page">
+<div id="loader" aria-hidden="true">
+  <div class="loader-inner">
+    <p class="loader-line">Preparing something special for you…</p>
+    <h1 class="loader-title">RAI FOREVER</h1>
+  </div>
+</div>
+
+<div class="grain" aria-hidden="true"></div>
+
+<main id="main">
+  <section id="home" class="hero">
+    <div class="hero-bg" id="hero-bg" aria-hidden="true"></div>
+    <img class="hero-photo" id="hero-photo" src="" alt="" aria-hidden="true" fetchpriority="high" decoding="async">
+    <div class="hero-veil"></div>
+    <canvas id="particles" class="hero-particles" aria-hidden="true"></canvas>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow reveal-text">A private story, for one reader</p>
+      <h1 class="hero-title">
+        <span class="reveal-text hero-title-main" style="--d:0.05s">RAI</span>
+        <span class="reveal-text hero-title-script" style="--d:0.2s">FOREVER</span>
+      </h1>
+      <div class="hero-details">
+        <p class="hero-tagline reveal-text" style="--d:0.4s">“All is only for you.”</p>
+        <p class="hero-support reveal-text" style="--d:0.55s">Some stories are written in books.<br>Ours is written in moments.</p>
+        <a href="/story" class="btn btn-outline hero-cta reveal-text" aria-label="Enter our story" style="--d:0.75s">
+          <span>Enter Our Story</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="js/config.js"></script>
+<script src="js/loader.js"></script>
+<script src="js/particles.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
