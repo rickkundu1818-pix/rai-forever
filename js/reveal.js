@@ -30,7 +30,34 @@
     observeAll
   };
 
+  function registerStorybookSections() {
+    document.querySelectorAll('main > section:not(.hero)').forEach((section) => {
+      if (!section.classList.contains('reveal')) {
+        section.classList.add('reveal');
+        section.dataset.reveal = 'up';
+      }
+    });
+    document.querySelectorAll('.story-header, .memory-game-shell, .constellation-launcher, .soundtrack-launcher, .mirror-launcher, .special-inner').forEach((el) => {
+      if (!el.classList.contains('reveal')) {
+        el.classList.add('reveal');
+        el.dataset.reveal = 'up';
+      }
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
+    registerStorybookSections();
     observeAll('.reveal');
+
+    const progressBar = document.getElementById('scroll-progress-fill');
+    if (progressBar) {
+      const updateScrollProgress = () => {
+        const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+        progressBar.style.setProperty('--progress', `${Math.min(Math.max(progress, 0), 100)}%`);
+      };
+      updateScrollProgress();
+      window.addEventListener('scroll', updateScrollProgress, { passive: true });
+    }
   });
 })();
